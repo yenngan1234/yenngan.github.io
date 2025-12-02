@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 9: Tạo danh sách, bảng</title>
+<style>
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #ffe6f2, #dfe7ff);
+    padding: 40px;
+    text-align: center;
+}
+h1 { color: #2a2a2a; margin-bottom: 30px; font-weight: 800; }
+
+button {
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #6a5acd;
+    color: white;
+    transition: 0.25s;
+    font-weight: 600;
+}
+button:hover { background-color: #5848b8; transform: scale(1.05); }
+
+.table-container { 
+    margin-top: 30px; 
+    display: none; 
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 80%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+th, td {
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid black;
+}
+
+/* Hàng tiêu đề bài 1 */
+th.luyen-tap { border: 2px solid #4b7bec; background: #ddeaff; }
+
+/* Cột Toán, Vật lí, Hóa học bài 1 */
+th.toan { border: 2px solid #fc5c65; color: #c0392b; background: #ffe6e6; }
+th.vatly { border: 2px solid #fd9644; color: #e67e22; background: #fff2e0; }
+th.hoa { border: 2px solid #20bf6b; color: #27ae60; background: #e6ffed; }
+
+/* Bài vận dụng (màu xanh) */
+th.vd { border: 2px solid navy; background-color: #cce6ff; }
+
+/* Hover dòng */
+tr:hover td { background-color: #f7f1a8; }
+
+</style>
+</head>
+<body>
+
+<h1>Bài tập HTML Table</h1>
+
+<button onclick="showTable('luyenTap')">Bài Luyện tập</button>
+<button onclick="showTable('vanDung')">Bài Vận dụng</button>
+
+<!-- Bài Luyện tập -->
+<div id="luyenTap" class="table-container">
+    <h2>Bài Luyện tập</h2>
+    <table>
+        <tr>
+            <th class="luyen-tap">Họ tên</th>
+            <th class="toan">Toán</th>
+            <th class="vatly">Vật lí</th>
+            <th class="hoa">Hóa học</th>
+        </tr>
+        <tr>
+            <td>Nguyễn Văn A</td>
+            <td>8.5</td>
+            <td>7.0</td>
+            <td>9.0</td>
+        </tr>
+        <tr>
+            <td>Trần Thị B</td>
+            <td>7.0</td>
+            <td>8.0</td>
+            <td>8.5</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Bài Vận dụng -->
+<div id="vanDung" class="table-container">
+    <h2>Bài Vận dụng</h2>
+    <table>
+        <tr>
+            <th class="vd">Họ tên</th>
+            <th class="vd">Điểm Toán</th>
+            <th class="vd">Điểm Vật lí</th>
+            <th class="vd">Điểm Hóa học</th>
+        </tr>
+        <tr>
+            <td>Võ Thành Danh</td>
+            <td>6.5</td>
+            <td>7.0</td>
+            <td>8.5</td>
+        </tr>
+        <tr>
+            <td>Cao Ngô Anh Vy</td>
+            <td>10.0</td>
+            <td>10.0</td>
+            <td>10.0</td>
+        </tr>
+        <tr>
+            <td>Phạm Yến Ngân</td>
+            <td>10.0</td>
+            <td>10.0</td>
+            <td>10.0</td>
+        </tr>
+        <tr>
+            <td>Nguyễn Phi Vũ</td>
+            <td>6.0</td>
+            <td>7.5</td>
+            <td>8.5</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+function showTable(tableId) {
+    const tables = document.querySelectorAll('.table-container');
+    tables.forEach(tbl => tbl.style.display = 'none');
+    document.getElementById(tableId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
